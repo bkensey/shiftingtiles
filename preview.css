@@ -3,11 +3,11 @@
   min-height: 300px;
 }
 .gallery.shiftingtiles { 
-  background: black;
+  background: white;
   margin: -1px;
-  border: 1px solid black; 
+  border: 1px solid white; 
   height: 300px;
-  box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px white;
 }
 .gallery.shiftingtiles img {
   display: none;

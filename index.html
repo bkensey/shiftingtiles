@@ -39,35 +39,6 @@
 </script>
 </p>
 
-<h3>Usage</h3>
-
-<p>To use the Shifting Tiles gallery you should clone the repository</p>
-
-<pre><code>$ cd your_project_root/lib
-$ git clone https://github.com/hermanbanken/shiftingtiles.git shiftingtiles
-</code></pre>
-
-<p>... and write the following lines to initiate the gallery in the node with id #elem</p>
-
-<pre><code>&lt;script&gt;
-    function photoSource(){
-        return ["img.jpg"];
-    }
-    $("#elem").shiftingtiles(photoSource(), { duration: 2000 });
-&lt;/script&gt;
-</code></pre>
-
-<p>You may need to specify the size of the canvas like this, default is 1440x900.</p>
-
-<pre><code>&lt;style&gt;
-  .shiftingtiles {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-&lt;/style&gt;
-</code></pre>
-
 <h3>The Animations</h3>
 <p>Single box:</p>
 <div class="frame" style="width:100%;">
