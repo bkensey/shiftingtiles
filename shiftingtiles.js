@@ -1,22 +1,27 @@
 (function( $ ){
 
-  $.fn.shiftingtiles = function(images, options) {
+  $.fn.shiftingtiles = function(images, logoImageSource, options) {
   	
-    // Variables
+    
+	
+	// Variables
     var options = $.extend({
           photosource: images,
+		  logoImage: logoImageSource,
+		  uselogoImage: (typeof logoImageSource != "undefined"),
           duration: 5000,
         }, options), 
         timeout, 
         where = this;
-    
+		    
     where.on("animationend webkitAnimationEnd oAnimationEnd", ".leave > .row", function(){
       $(this).parent().addClass("left").removeClass("leave");
     });
     where.on("animationend webkitAnimationEnd oAnimationEnd", ".disappear", function(){
       //console.log("Animation end, removing node",this);
       // $(this).  this wasn't working, why? no idea
-      $(this).css("display", "none").remove();
+      $(this).css("display", "none");
+      $(this).remove();
       where.trigger("st-animate-after");
 
       return false;
@@ -47,8 +52,8 @@
   	// Setup
   	function setup(where){
   	 	where.addClass("shiftingtiles");
-	  	where.prepend("<div class='row'><div class='single'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
-	  	where.prepend("<div class='row'><div class='single'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
+	  	where.prepend("<div class='row second'><div class='single'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
+	  	where.prepend("<div class='row first'><div class='single first'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
       where.append("<div class='loading'>Loading Photos...</div>");
 
       where.find(".single, .dual > div").each(addImage);
@@ -59,13 +64,22 @@
     function image($element){
       $element.css("background-image", "url("+source()+")");
     }
+	
+	// Add logo image from source to jQuery element
+    function logoImage($element){
+	  //if(typeof options.logoImage != "undefined")
+	    $element.css("background-image", "url("+options.logoImage+")");
+		$element.removeClass("first")
+    }
 
     // Figure out single or dual and add images
     function addImage(index, node){
       node = $(node);
       //console.log(node);
-      // Load new images
-      if(node.hasClass("single") || node.parent(".dual").size() > 0){
+	  // Load new images
+	  if(node.hasClass("first") && options.uselogoImage) {
+		logoImage(node);  
+	  } else if(node.hasClass("single") || node.parent(".dual").length > 0){
         image(node);
       } else if(node.hasClass("dual")) {
         node.children().each(function(){
@@ -80,7 +94,7 @@
   	function frame(){
   		clearTimeout(timeout);
   		var boxes = where.find(".single:not(:last-child), .dual:not(:last-child)");
-  		var disappear = $(boxes.get( ~~(Math.random() * boxes.size()) ));
+  		var disappear = $(boxes.get( ~~(Math.random() * boxes.length) ));
 
       where.trigger("st-animate-before", disappear);
 
