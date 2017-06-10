@@ -1,14 +1,11 @@
 (function( $ ){
 
-  $.fn.shiftingtiles = function(images, logoImageSource, options) {
+  $.fn.shiftingtiles = function(images, options) {
   	
     
 	
 	// Variables
     var options = $.extend({
-          photosource: images,
-		  logoImage: logoImageSource,
-		  uselogoImage: (typeof logoImageSource != "undefined"),
           duration: 5000,
         }, options), 
         timeout, 
@@ -53,7 +50,7 @@
   	function setup(where){
   	 	where.addClass("shiftingtiles");
 	  	where.prepend("<div class='row second'><div class='single'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
-	  	where.prepend("<div class='row first'><div class='single first'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
+	  	where.prepend("<div class='row first'><div class='single firstItem'></div><div class='single'></div><div class='dual'><div></div><div></div></div></div>");
       where.append("<div class='loading'>Loading Photos...</div>");
 
       where.find(".single, .dual > div").each(addImage);
@@ -65,11 +62,11 @@
       $element.css("background-image", "url("+source()+")");
     }
 	
-	// Add logo image from source to jQuery element
-    function logoImage($element){
+	// Add first/initial image from special source to jQuery element
+    function loadInitialImage($element){
 	  //if(typeof options.logoImage != "undefined")
-	    $element.css("background-image", "url("+options.logoImage+")");
-		$element.removeClass("first")
+	    $element.css("background-image", "url("+options.initialImage+")");
+		$element.removeClass("firstItem")
     }
 
     // Figure out single or dual and add images
@@ -77,8 +74,8 @@
       node = $(node);
       //console.log(node);
 	  // Load new images
-	  if(node.hasClass("first") && options.uselogoImage) {
-		logoImage(node);  
+	if(node.hasClass("firstItem") && (options.initialImage != null && options.initialImage != '')) {
+		loadInitialImage(node);  
 	  } else if(node.hasClass("single") || node.parent(".dual").length > 0){
         image(node);
       } else if(node.hasClass("dual")) {

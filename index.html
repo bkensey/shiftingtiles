@@ -19,8 +19,7 @@
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
+    <div class="page">
 
         <header>
           <h1>Shifting Tiles</h1>
@@ -29,11 +28,19 @@
 
         <section id="main_content">
           
-<p>How it looks:
+<p>Sample 1
 
-<div class='gallery'><img src="images/preview.png" /></div>
+<div class='gallery1'><img src="images/preview.png" /></div>
 <script>
-	$(".gallery").shiftingtiles(["NatGeo04-small.jpg","NatGeo04-small.jpg","NatGeo04-small.jpg"], { duration: 2000 });
+	$(".gallery1").shiftingtiles(["NatGeo04-small.jpg","NatGeo04-small.jpg","NatGeo04-small.jpg"], { initialImage: "NatGeo04-small.jpg", duration: 2000 });
+</script>
+</p>
+
+<p>Sample 2
+
+<div class='gallery2'><img src="images/preview.png" /></div>
+<script>
+	$(".gallery2").shiftingtiles(["NatGeo04-small.jpg","NatGeo04-small.jpg","NatGeo04-small.jpg"], { duration: 2000 });
 </script>
 </p>
 
@@ -67,7 +74,6 @@
         </footer>
 
         
-      </div>
     </div>
   </body>
 </html>

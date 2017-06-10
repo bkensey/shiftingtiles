@@ -1,6 +1,14 @@
+.page {
+  box-sizing: border-box;
+  width: auto;
+  margin: auto;
+  max-width: 1020px;
+  padding: 96px 32px;
+}
+
 .gallery {
   width: 100%;
-  min-height: 300px;
+  min-height: 600px;
 }
 .gallery.shiftingtiles { 
   background: white;
