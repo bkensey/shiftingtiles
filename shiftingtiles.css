@@ -59,6 +59,7 @@ src: url('//static1.squarespace.com/static/57db0cd9be6594ad5f26f16f/t/57fa8797e5
 	height: 600px;
 	width: 100%;
 	overflow: hidden;
+	float: left;
 
 	.image() {
 		background-size: cover;
@@ -231,4 +232,14 @@ src: url('//static1.squarespace.com/static/57db0cd9be6594ad5f26f16f/t/57fa8797e5
 	@-webkit-keyframes leave-r { .leave(-1); }
 	@-moz-keyframes leave-r { .leave(-1); }
 	@keyframes leave-r { .leave(-1); }
+}
+
+.st-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+	background-image: "images/logo.png";
 }
