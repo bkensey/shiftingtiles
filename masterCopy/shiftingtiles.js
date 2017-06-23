@@ -123,7 +123,7 @@
     function overlayFadeOut() {
       clearTimeout(overlayTimeout);
       where.find(".st-overlay").fadeOut();
-      where.find(".st-overlay").remove();
+      //where.find(".st-overlay").remove();
     }
 
     $(document.body).keydown(function(e) {
