@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="preview.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="mastercopy/shiftingtiles-compiled.css" />
-    <script src="masterCopy/jquery-1.8.3.min.js"></script>
-	<script src="masterCopy/shiftingtiles.js"></script>
 
-    <!--[if lt IE 9]>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="preview.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="mastercopy/shiftingtiles-compiled.css" />
+  <script src="masterCopy/jquery-1.8.3.min.js"></script>
+  <script src="masterCopy/shiftingtiles.js"></script>
+
+  <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Shifting Tiles by hermanbanken</title>
-  </head>
+  <title>Shifting Tiles by hermanbanken</title>
+</head>
 
-  <body>
-    <div class="page">
+<body>
+  <div class="page">
 
-        <header>
-          <h1>Shifting Tiles</h1>
-          <h2>Photo gallery based on the Mac OS X Shifting Tiles screensaver</h2>
-        </header>
+    <header>
+      <h1>Shifting Tiles</h1>
+      <h2>Photo gallery based on the Mac OS X Shifting Tiles screensaver</h2>
+    </header>
 
-        <section id="main_content">
-          <h2>Sample 2</h2>
+    <section id="main_content">
+      <h2>Sample 2</h2>
 
-<div class="wrapper">
-<div class='gallery1'><img src="images/preview.png" /></div>
-</div>
-<script>
-	$(".gallery1").shiftingtiles(["images/sample1.jpg","images/sample2.jpg","images/sample3.jpg","images/sample4.jpg","images/sample5.jpg","images/sample6.jpg"], { initialImage: "images/logo.png", duration: 5000 });
-</script>
+      <div class="wrapper">
+        <div class='gallery1'><img src="images/preview.png" /></div>
+      </div>
+      <script>
+        $(".gallery1").shiftingtiles(["images/sample1.jpg", "images/sample2.jpg", "images/sample3.jpg", "images/sample4.jpg", "images/sample5.jpg", "images/sample6.jpg"], {
+          initialImage: "images/logo.png",
+          duration: 5000
+        });
+      </script>
 
-<br />
+      <br />
 
-<h2>Sample 2</h2>
+      <h2>Sample 2</h2>
 
-<br />
-<div class="wrapper">
-<div class='gallery2'><img src="images/preview.png" /></div>
-</div>
-<script>
-	$(".gallery2").shiftingtiles(["images/sample1.jpg","images/sample2.jpg","images/sample3.jpg","images/sample4.jpg","images/sample5.jpg","images/sample6.jpg"], { overlayImage: "images/logo.png", overlayDuration: 5000, duration: 5000 });
-</script>
+      <br />
+      <div class="wrapper">
+        <div class='gallery2'><img src="images/preview.png" /></div>
+      </div>
+      <script>
+        $(".gallery2").shiftingtiles(["images/sample1.jpg", "images/sample2.jpg", "images/sample3.jpg", "images/sample4.jpg", "images/sample5.jpg", "images/sample6.jpg"], {
+          overlayImage: "images/logo.png",
+          overlayDuration: 5000,
+          duration: 5000
+        });
+      </script>
 
-<h3>The Animations</h3>
-<p>Single box:</p>
-<div class="frame" style="width:100%;">
-  <div class="disappear single preview"></div>
-  <div class="rest dual"></div>
-  <div class="rest single"></div>
-</div>
-<hr class="clear">
+      <h3>The Animations</h3>
+      <p>Single box:</p>
+      <div class="frame" style="width:100%;">
+        <div class="disappear single preview"></div>
+        <div class="rest dual"></div>
+        <div class="rest single"></div>
+      </div>
+      <hr class="clear">
 
-<p>Duo box:</p>
-<div class="frame" style="width:100%;">
-  <div class="disappear dual preview">
-    <div style='display:block;'></div>
-    <div style='display:block'></div>
+      <p>Duo box:</p>
+      <div class="frame" style="width:100%;">
+        <div class="disappear dual preview">
+          <div style='display:block;'></div>
+          <div style='display:block'></div>
+        </div>
+        <div class="rest single"></div>
+        <div class="rest single"></div>
+      </div>
+      <hr class="clear">
+
+      <h3>Authors and Contributors</h3>
+
+      <p>This version of Shifting Tiles was forked from <a href="https://github.com/hermanbanken" class="user-mention">@hermanbanken</a>, inpired by Apple and enpowered by HTML5 and CSS3.</p>
+
+      <footer>
+        Shifting Tiles is maintained by <a href="https://github.com/hermanbanken">hermanbanken</a><br> This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+      </footer>
+
+
   </div>
-  <div class="rest single"></div>
-  <div class="rest single"></div>
-</div>
-<hr class="clear">
+</body>
 
-<h3>Authors and Contributors</h3>
-
-<p>This version of Shifting Tiles was forked from <a href="https://github.com/hermanbanken" class="user-mention">@hermanbanken</a>, inpired by Apple and enpowered by HTML5 and CSS3.</p>
-
-        <footer>
-          Shifting Tiles is maintained by <a href="https://github.com/hermanbanken">hermanbanken</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-
-    </div>
-  </body>
 </html>

@@ -2,8 +2,6 @@
 
   $.fn.shiftingtiles = function(images, options) {
 
-
-
     // Variables
     var options = $.extend({
         duration: 5000,
@@ -105,23 +103,27 @@
 
     // Animate frame, remove box and add new one
     function frame() {
-      clearTimeout(timeout);
-      var boxes = where.find(
-        ".single:not(:last-child), .dual:not(:last-child)");
-      var disappear = $(boxes.get(~~(Math.random() * boxes.length)));
+      // Only run when the webpage has focus
+      if (document.hasFocus()) {
+        clearTimeout(timeout);
+        var boxes = where.find(
+          ".single:not(:last-child), .dual:not(:last-child)");
+        var disappear = $(boxes.get(~~(Math.random() * boxes.length)));
 
-      where.trigger("st-animate-before", disappear);
+        where.trigger("st-animate-before", disappear);
 
-      disappear.parent().append(addImage(0, disappear.clone()));
-      disappear.addClass("disappear");
-      where.trigger("st-animate", disappear);
+        disappear.parent().append(addImage(0, disappear.clone()));
+        disappear.addClass("disappear");
+        where.trigger("st-animate", disappear);
 
-      timeout = setTimeout(frame, options.duration);
+        timeout = setTimeout(frame, options.duration);
+      }
     }
 
     function overlayFadeOut() {
       clearTimeout(overlayTimeout);
-      where.find(".overlay").fadeOut();
+      where.find(".st-overlay").fadeOut();
+      where.find(".st-overlay").remove();
     }
 
     $(document.body).keydown(function(e) {
@@ -158,8 +160,7 @@ if (!Array.prototype.reduce) {
         "Array length is 0 and no second argument");
       curr = this[0];
       i = 1; // start accumulating at the second element
-    }
-    else
+    } else
       curr = arguments[1];
 
     while (i < l) {
