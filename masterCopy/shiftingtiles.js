@@ -104,8 +104,9 @@
     // Animate frame, remove box and add new one
     function frame() {
       // Only run when the webpage has focus
+      clearTimeout(timeout);
+
       if (document.hasFocus()) {
-        clearTimeout(timeout);
         var boxes = where.find(
           ".single:not(:last-child), .dual:not(:last-child)");
         var disappear = $(boxes.get(~~(Math.random() * boxes.length)));
@@ -115,9 +116,9 @@
         disappear.parent().append(addImage(0, disappear.clone()));
         disappear.addClass("disappear");
         where.trigger("st-animate", disappear);
-
-        timeout = setTimeout(frame, options.duration);
       }
+
+      timeout = setTimeout(frame, options.duration);
     }
 
     function overlayFadeOut() {
