@@ -54,8 +54,8 @@
       // prepend overlay if specified
       if (options.overlayImage != null && options.overlayImage != '') {
         where.prepend(
-          "<div class='st-overlay' style='background-image: url(\"" +
-          options.overlayImage + "\")'></div>");
+          "<div class='st-overlay'><img src=\"" +
+          options.overlayImage + "\"></div>");
         overlayTimeout = setTimeout(overlayFadeOut, options.overlayDuration);
       }
       where.prepend(
