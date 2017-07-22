@@ -123,7 +123,7 @@
 
     function overlayFadeOut() {
       clearTimeout(overlayTimeout);
-      where.find(".st-overlay").fadeOut();
+      where.find(".st-overlay").fadeOut(1000);
       //where.find(".st-overlay").remove();
     }
 
